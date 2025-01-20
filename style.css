@@ -121,3 +121,65 @@ a:hover {
     padding: 15px;
   }
 }
+
+/* ========================== */
+/* GALLERY / CREATIVE SECTION */
+/* ========================== */
+
+/* Container for the image/video grid */
+.gallery {
+    display: grid;
+    grid-gap: 20px;
+    /* Each grid cell is at least 280px wide; expands to fill available space */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1200px;   /* optional: limit total gallery width */
+    margin: 40px auto;   /* center the grid and add top/bottom spacing */
+  }
+  
+  /* Individual gallery item container */
+  .gallery-item {
+    background-color: #fff;          /* matches your .project background */
+    border: 1px solid #dcd7d1;       /* subtle border */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle drop shadow */
+    overflow: hidden;                /* ensures rounded corners show properly */
+    text-align: center;             /* center any text or media elements */
+  }
+  
+  /* Images and videos take full width of the gallery-item */
+  .gallery-item img,
+  .gallery-item video {
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: middle; /* fix baseline alignment quirks */
+  }
+  
+  /* If you want consistent spacing inside each gallery item */
+  .gallery-item {
+    padding: 10px;
+  }
+
+  /* Specific styles for landscape images */
+  .gallery-item img.landscape {
+    width: auto;
+    height: 100%;
+  }
+
+  /* Specific styles for portrait videos */
+  .gallery-item video.portrait {
+    width: auto;
+    height: 100%;
+  }
+  
+  /* 
+     Optional: if you want a small caption or overlay, 
+     you could add a .caption or similar sub-element 
+     and style it here.
+  */
+  
+  /* 
+     Media Query Adjustments (Optional):
+     If you’d like to tweak spacing or columns on mobile, 
+     add rules inside @media (max-width: 768px) { ... }.
+  */

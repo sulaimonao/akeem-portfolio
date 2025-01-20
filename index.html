@@ -1,10 +1,12 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Akeem Sulaimon Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Link to your updated stylesheet with monospaced font styles -->
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <main>
@@ -13,7 +15,7 @@
       <h1>AKEEM SULAIMON</h1>
       <p>AI DESIGNER | CREATIVE INNOVATOR | PROBLEM SOLVER</p>
     </section>
-    
+
     <!-- About Section -->
     <section id="about">
       <h2>ABOUT</h2>
@@ -36,12 +38,177 @@
       </div>
     </section>
 
-    <!-- Creative Work Section -->
+    <!-- Gallery / Creative Work Section -->
     <section id="creative">
       <h2>CREATIVE WORK</h2>
+      <p>Explore visual art and video snippets below.</p>
+      
+      <!-- GALLERY GRID -->
+      <div class="gallery">
+        <!-- Example images (webp/png) -->
+        <div class="gallery-item">
+          <img src="./assets/images/yzy1.png" alt="YZY Artwork 1" />
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/images/yzy2.png" alt="YZY Artwork 2" />
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/images/yzy3.png" alt="YZY Artwork 3" />
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/images/yzy4.png" alt="YZY Artwork 4" />
+        </div>
+
+        <!-- Example videos (mp4) -->
+        <div class="gallery-item">
+          <video controls>
+            <source src="./assets/videos/yzy1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="gallery-item">
+          <video controls>
+            <source src="./assets/videos/yzy2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <!-- You can continue adding as many images/videos as you’d like -->
+    </section>
+
+    <section id="creative">
+      <h2>Creative Work</h2>
       <p>Explore visual art below.</p>
       <div class="gallery">
-        <!-- You can showcase samples or link to them here. -->
+        <!-- Inserted media items -->
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const mediaArray = [
+              {
+                "file_path": "./assets/images/yzy2.png",
+                "mime_type": "image/webp",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "file_path": "./assets/images/yzy3.png",
+                "mime_type": "image/webp",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "file_path": "./assets/images/yzy1.png",
+                "mime_type": "image/webp",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "file_path": "./assets/images/yzy4.png",
+                "mime_type": "image/webp",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "file_path": "./assets/images/yzy5.png",
+                "mime_type": "image/webp",
+                "width": 1024,
+                "height": 1792
+              },
+              {
+                "file_path": "./assets/images/yzy7.png",
+                "mime_type": "image/webp",
+                "width": 1024,
+                "height": 1792
+              },
+              {
+                "file_path": "./assets/images/yzy6.png",
+                "mime_type": "image/webp",
+                "width": 1024,
+                "height": 1024
+              },
+              {
+                "file_path": "./assets/images/yzy8.png",
+                "mime_type": "image/webp",
+                "width": 1024,
+                "height": 1792
+              },
+              {
+                "file_path": "./assets/images/yzy9.png",
+                "mime_type": "image/webp",
+                "width": 1024,
+                "height": 1792
+              },
+              {
+                "file_path": "./assets/images/yzy12.png",
+                "mime_type": "image/webp",
+                "width": 1024,
+                "height": 1792
+              },
+              {
+                "file_path": "./assets/images/yzy11.jpg",
+                "mime_type": "image/jpg",
+                "width": 1408,
+                "height": 768
+              },
+              {
+                "file_path": "./assets/images/yzy14.jpg",
+                "mime_type": "image/jpg",
+                "width": 1408,
+                "height": 768
+              },
+              {
+                "file_path": "./assets/videos/yzy1.mp4",
+                "mime_type": "video/mp4",
+                "width": 854,
+                "height": 480
+              },
+              {
+                "file_path": "./assets/videos/yzy2.mp4",
+                "mime_type": "video/mp4",
+                "width": 854,
+                "height": 480
+              },
+              {
+                "file_path": "./assets/videos/yzy3.mp4",
+                "mime_type": "video/mp4",
+                "width": 480,
+                "height": 854
+              },
+              {
+                "file_path": "./assets/videos/yzy4.mp4",
+                "mime_type": "video/mp4",
+                "width": 480,
+                "height": 480
+              }
+            ];
+            
+            const galleryContainer = document.querySelector('.gallery');
+          
+            mediaArray.sort((a, b) => (b.width * b.height) - (a.width * a.height));
+          
+            mediaArray.forEach(item => {
+              const galleryItem = document.createElement('div');
+              galleryItem.classList.add('gallery-item');
+              
+              if (item.mime_type.startsWith('image')) {
+                const img = document.createElement('img');
+                img.src = item.file_path;
+                img.alt = 'Gallery Item';
+                galleryItem.appendChild(img);
+              } else if (item.mime_type.startsWith('video')) {
+                const video = document.createElement('video');
+                video.controls = true;
+                const source = document.createElement('source');
+                source.src = item.file_path;
+                source.type = item.mime_type;
+                video.appendChild(source);
+                galleryItem.appendChild(video);
+              }
+              
+              galleryContainer.appendChild(galleryItem);
+            });
+          });
+        </script>
       </div>
     </section>
 
