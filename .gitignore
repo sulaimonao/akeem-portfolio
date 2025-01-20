@@ -3,3 +3,4 @@ os_walk.py
 portfolio.json
 .DS_Store
 media_info.json
+asset_info.py
