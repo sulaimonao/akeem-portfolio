@@ -1,4 +1,5 @@
-//script.js
+// script.js
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Portfolio ready!");
-});
+    console.log("Portfolio is loaded and ready!");
+  });
+  
