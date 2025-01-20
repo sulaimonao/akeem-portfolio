@@ -1,2 +1,2 @@
 # akeem-portfolio
- AI Designer portfolio for Ye
+A custom-coded portfolio showcasing my work in AI, creative generation, and design.
